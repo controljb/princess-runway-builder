@@ -1,0 +1,82 @@
+:root {
+  --bg: #efe7ff;
+  --panel: #fffafc;
+  --accent: #8c52ff;
+  --accent-2: #ff5db1;
+  --ink: #2f2141;
+  --muted: #6b5c80;
+  --border: #ddcff5;
+  --gold: #f5c85b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, #fff3f9 0%, transparent 30%),
+    radial-gradient(circle at top right, #f0e5ff 0%, transparent 25%),
+    linear-gradient(180deg, #f8f3ff 0%, #eee2ff 100%);
+}
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+.card {
+  background: rgba(255,255,255,0.92);
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(77,43,119,0.12);
+}
+.left-panel { padding: 20px; }
+.main-panel { padding: 18px; display: flex; flex-direction: column; }
+h1, h2, p { margin-top: 0; }
+.muted { color: var(--muted); }
+.tool-group { margin: 16px 0; }
+.tool-group label { display: block; font-weight: bold; margin-bottom: 8px; }
+input[type="text"], select, input[type="color"] {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  padding: 8px 12px;
+  background: white;
+  color: var(--ink);
+  font-size: 16px;
+}
+input[type="color"] { padding: 4px; }
+input[type="range"] { width: 100%; }
+.button-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.button-row.stacked { display: grid; grid-template-columns: 1fr; }
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 14px;
+  cursor: pointer;
+  background: #eadfff;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(88,51,136,0.12);
+}
+button.active { background: var(--accent); color: white; }
+button.primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: white; }
+.tiny-note { margin-top: 6px; font-size: 14px; color: var(--muted); }
+.status { min-height: 24px; font-weight: bold; color: var(--accent); }
+.canvas-wrap { flex: 1; display: grid; place-items: center; overflow: auto; }
+canvas {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  max-width: 100%;
+  height: auto;
+}
+.world-body { overflow: hidden; }
+.world-title { text-align: center; padding: 12px 12px 0 12px; }
+.world-stage-wrap { display: grid; place-items: center; padding: 0 12px 12px 12px; }
+@media (max-width: 1100px) {
+  .page-shell { grid-template-columns: 1fr; }
+}

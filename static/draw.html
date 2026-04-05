@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Princess Runway Builder v3 - Studio</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="left-panel card">
+      <h1>Dress Studio</h1>
+      <p class="muted">Choose a silhouette, paint the fabric, and send it to the runway.</p>
+
+      <div class="tool-group">
+        <label for="dressSelect">Dress Style</label>
+        <select id="dressSelect">
+          <option value="ballgown">Fairy-Tale Ball Gown</option>
+          <option value="aodai">Vietnamese-Inspired Áo Dài</option>
+          <option value="runway">Runway Gown</option>
+        </select>
+      </div>
+
+      <div class="tool-group">
+        <label for="lookName">Look Name</label>
+        <input id="lookName" type="text" value="Royal Bloom" maxlength="24" />
+      </div>
+
+      <div class="tool-group">
+        <label for="colorPicker">Color</label>
+        <input type="color" id="colorPicker" value="#ff5db1" />
+      </div>
+
+      <div class="tool-group">
+        <label for="brushSize">Brush Size</label>
+        <input type="range" id="brushSize" min="4" max="36" value="16" />
+        <div class="tiny-note"><span id="brushSizeValue">16</span> px</div>
+      </div>
+
+      <div class="tool-group">
+        <label>Tool</label>
+        <div class="button-row">
+          <button id="toolPaintBtn" class="active">Paint</button>
+          <button id="toolGlitterBtn">Glitter</button>
+          <button id="toolEraseBtn">Eraser</button>
+        </div>
+      </div>
+
+      <div class="tool-group">
+        <label>Actions</label>
+        <div class="button-row stacked">
+          <button id="clearBtn">Clear Dress</button>
+          <button id="saveBtn" class="primary">Send To Runway</button>
+        </div>
+      </div>
+
+      <p id="status" class="status"></p>
+    </aside>
+
+    <main class="main-panel card">
+      <div class="canvas-header">
+        <h2 id="dressTitle">Fairy-Tale Ball Gown</h2>
+        <p class="muted">The brush is clipped to the silhouette area.</p>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="dressCanvas" width="720" height="900"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
